@@ -9,3 +9,6 @@ Things to work on:
 
 - bug tarda el countdown en refrescar cuando compete
 - bug de highscore (después de entrar dos veces en el ELSE, resetea el highscore a 0.. es decir cuando se queda dos veces sin vida)
+
+
+// document.body.addEventListener("click", () => setInterval(()=> {console.log(1)}, 1000 ))

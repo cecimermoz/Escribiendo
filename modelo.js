@@ -1,5 +1,4 @@
 class Modelo {
-    
     constructor(){
     
     this.listadoPalabras = ["Compromiso", "Quince", "Profesion", "Colocar", "Boton", "Secuestrar", "Panteon",
@@ -29,9 +28,10 @@ class Modelo {
     "cabeza", "hemos", "amigos", "chica", "cariño", "lado", "allá", "entre", "minutos", "digo", "algún", "serio", "cuidado",
     "pasó", "buenas", "somos", "amor", "puerta", "ves", "vaya", "ah", "suerte", "eh", "rápido", "cuenta", "quizás", "io", "esas",
      "pues", "pasado", "pensé", "todavía", "hermano", "debes", "casi", "forma", "aqui", "chico", "ok", "dicho", "nueva", "sabía", 
-     "muchas", "dentro", "hice", "contra", "auto", "camino",];
-        
+     "muchas", "dentro", "hice", "contra", "auto", "camino",];   
     }
-   
-
+    
 }
+
+
+
