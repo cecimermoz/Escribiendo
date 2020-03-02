@@ -11,7 +11,6 @@ body{
     display: flex;
     height: 100vh;
     flex-direction: column;
-
 }
 .palabra{
     padding: 4.2% 0;
@@ -45,6 +44,13 @@ button{
     border-radius: 10px;
     transition: all .5s ease;
 }
+input,
+button{
+    box-shadow: 2px 5px 4px -5px rgba(0,0,0,0.70);
+    -moz-box-shadow: 2px 5px 4px -5px rgba(0,0,0,0.70);
+    -webkit-box-shadow: 2px 5px 4px -5px rgba(0,0,0,0.70);
+    -ms-box-shadow: 2px 5px 4px -5px rgba(0,0,0,0.70);
+}
 button:hover{
     background: rgb(240, 240, 240);
     transition: all .5s ease;
@@ -57,11 +63,11 @@ button:hover{
     justify-content: center;
     height: 50vh;
     font-size: 2.5rem;
+    padding: 4%;
 }
 
 .footer div{
     flex-grow: 1;
-    padding: 6px;
 }
 .vidas,
 .puntos,
@@ -86,10 +92,6 @@ button:hover{
     flex-direction: row;
     justify-content: center;
 }
-
-
-
-
 
 
 /* The Modal (background) */
@@ -130,3 +132,43 @@ button:hover{
     text-decoration: none;
     cursor: pointer;
   }
+
+@media (max-width: 600px) {
+    .modal-content{
+        font-size: 16px;
+    }
+    body{
+        font-size: 30px;
+    }
+    .palabra{
+        display: flex;
+        flex-direction: column;
+    }    
+    .palabra-div{
+        padding-top: 10vh;
+    }    
+    .timer{
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        right: 20px;
+        margin: 5px;
+    }
+    div .timer{
+        margin: 0px;
+        padding: 14px;
+        font-size: 30px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    .footer div{
+        flex-grow: initial;
+        font-size: 1.8rem;
+        padding: .35em;
+        margin: 0;
+    }
+
+}
