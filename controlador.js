@@ -23,26 +23,48 @@ var Controlador = function(jugador){
 
 };
 
+/*
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+*/
 Controlador.prototype = {
+    startGame: function() {
+        modal.style.display = "none";
+        this.generarPalabra(); 
+        vista.mostrarHS(this.jugador.hs);
+        this.startTimer(true);
+    },
+
     modalReglas: function(){
         var contexto = this;
         var modal = this.modal;
         modal.style.display = "block";
         var span = document.getElementsByClassName("close")[0];
         span.onclick = function() {
-            modal.style.display = "none";
-            contexto.generarPalabra(); 
-
-            }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                    contexto.generarPalabra(); 
-            vista.mostrarHS(contexto.jugador.hs);
-
-
+            contexto.startGame();
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                contexto.startGame();
             }
         }
+    },
+    modalFinal: function(){
+        this.modal.style.display = "block";
+        $("#modal-h2").html("¡Oh qué triste! Perdiste... Pero ¡Ey! Acá van algunos reconocimientos:");
+        $("#modal-p1").html("Puntaje hecho esta vez: " + this.jugador.acumuladorPuntos);
+        $("#modal-p2").html("Highscore: " + this.jugador.hs);
+        $("#modal-p3").html("Segundos jugados: " + 200 + " segs.");
+
+
     },
 
     generarPalabra: function(numPalabra,upper,jugador){
@@ -64,6 +86,8 @@ Controlador.prototype = {
             clearInterval(contexto.myTimer);
             contexto.generarPalabra(); 
         }
+        display.textContent = timer;
+        timer--;
         contexto.myTimer = setInterval(function () {
             // to start only after the modal it's closed
             if( controlador.modal.style.display == "none"){
@@ -80,6 +104,11 @@ Controlador.prototype = {
             }
         }, 1000);
     },
+
+
+
+
+
 
     getRandomInt: function (max) {
         return max[Math.floor(max.length * Math.random())];

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Escribiendo</title>
     <link href="https://fonts.googleapis.com/css?family=Poiret+One|Roboto:300,500&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
 
 </head>
@@ -18,13 +17,13 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 style="margin-bottom: 15px;">Reglas del juego</h2>
-            <p style="margin-bottom: 15px;">Cuando cierres esta pestaña, el cronómetro empezará a correr.</p>
-            <p style="margin-bottom: 15px;">Tenés 5 segundos para tipear la palabra que ves en pantalla, pero ¡cuidado! no te olvides las tildes (la ortografía importa).
+            <h2 id="modal-h2" style="margin-bottom: 15px;">Reglas del juego</h2>
+            <p id="modal-p1" style="margin-bottom: 15px;">Cuando cierres esta pestaña, el cronómetro empezará a correr.</p>
+            <p id="modal-p2" style="margin-bottom: 15px;">Tenés 5 segundos para tipear la palabra que ves en pantalla, pero ¡cuidado! no te olvides las tildes (la ortografía importa).
                 Cada palabra que escribas bien te hará sumar puntos, si te equivocas no importa, en tanto escribas bien nuevamente la palabra
                 antes de que acaben tus 5 segundos. Pasados estos, se te quitará una vida. Tenes 5 vidas para acumular el mayor puntaje que puedas.
             </p>
-            <p style="margin-bottom: 15px;">¡Buena suerte!</p>
+            <p id="modal-p3" style="margin-bottom: 15px;">¡Buena suerte!</p>
         </div>
   
     </div>
@@ -52,6 +51,7 @@
             <span class="hs"></span>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <script src="jugador.js"></script>
     <script src="palabra.js"></script>
     <script src="vista.js"></script>

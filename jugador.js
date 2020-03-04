@@ -8,9 +8,9 @@ class Jugador {
 
     perderVidas(cantidad){
         this.cantidadVidas -= cantidad;
-        console.log(this.cantidadVidas);
         if(this.cantidadVidas <= 0){
-            alert("Perdiste... volvé a intentar");
+            controlador.modalFinal();
+            /* alert("Perdiste... volvé a intentar"); */
             this.cantidadVidas = this.vidasInicio;
             this.highscore(this.acumuladorPuntos);
             this.acumuladorPuntos = 0;

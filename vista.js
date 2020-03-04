@@ -38,6 +38,7 @@ Vista.prototype = {
         let input1 = this.elementos.claseInput.val();
         return input1.toUpperCase();
     }
+        
 
 
 };
