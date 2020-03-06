@@ -58,12 +58,12 @@ Controlador.prototype = {
         }
     },
     modalFinal: function(){
+        this.modal.style.fontFamily = "Roboto";
         this.modal.style.display = "block";
         $("#modal-h2").html("¡Oh qué triste! Perdiste... Pero ¡Ey! Acá van algunos reconocimientos:");
-        $("#modal-p1").html("Puntaje hecho esta vez: " + this.jugador.acumuladorPuntos);
-        $("#modal-p2").html("Highscore: " + this.jugador.hs);
-        $("#modal-p3").html("Segundos jugados: " + 200 + " segs.");
-
+        $("#modal-p2").html("El Highscore era: " + this.jugador.hs);
+        $("#modal-p1").html("Y esta vez hiciste " + this.jugador.acumuladorPuntos + " puntos.");
+        $("#modal-p3").html("Ah... y jugaste durante " + 200 + " segundos.");
 
     },
 
