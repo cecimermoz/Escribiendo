@@ -3,12 +3,6 @@ The original repository has been developed by me (Cecilia Mermoz), Natalia Irria
 Things to work on:
 
 - Work on the arrays of words
-- Responsive
 - HighScore (at least in LocalStorage)
 - Modelo -> listadoPalabras -> generate a filter that only allows larger-than-3-character words, to be selected from the array. This filter maybe be useful on a harder-level situation.
 
-- bug tarda el countdown en refrescar cuando compete
-- bug de highscore (después de entrar dos veces en el ELSE, resetea el highscore a 0.. es decir cuando se queda dos veces sin vida)
-
-
-// document.body.addEventListener("click", () => setInterval(()=> {console.log(1)}, 1000 ))
