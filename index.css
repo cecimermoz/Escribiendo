@@ -33,6 +33,9 @@ input{
     text-align: center;
     height: 3em;
 }
+.inputPalabra{
+    font-size: 13px;
+}
 button{
     background: none;
     border: 2px solid rgba(240, 240, 240, 0.68);

@@ -25,8 +25,14 @@ Vista.prototype = {
         this.elementos.puntos.html(numero);
     },
 
-    mostrarHS: function(numero){
-        this.elementos.hs.html(numero);
+    mostrarHS: function(){
+        if(localStorage.getItem("Mi Score")){
+            var hsStorage = localStorage.getItem("Mi Score");
+            this.elementos.hs.html(hsStorage);
+        } else {
+            this.elementos.hs.html("0");
+        }
+
     },
 
     desaparecerPalabra: function (){

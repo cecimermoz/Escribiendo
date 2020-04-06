@@ -16,39 +16,25 @@ var Controlador = function(jugador){
 
     this.myTimer = 0;
     this.jugador = jugador;
-    this.hs = jugador.hs;
     this.modal = document.getElementById("modal");
     // to reduce countdown, reduce "dificultad"
     this.dificultad = 5;
 
 };
 
-/*
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
-*/
 Controlador.prototype = {
     startGame: function() {
         modal.style.display = "none";
+        this.jugador.hs();
         this.generarPalabra(); 
-        vista.mostrarHS(this.jugador.hs);
+        vista.mostrarHS();
         this.startTimer(true);
     },
 
     modalReglas: function(){
         var contexto = this;
-        var modal = this.modal;
-        modal.style.display = "block";
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
+        this.modal.style.display = "block";
+        document.getElementsByClassName("close")[0].onclick = function() {
             contexto.startGame();
         }
         window.onclick = function(event) {
@@ -61,10 +47,9 @@ Controlador.prototype = {
         this.modal.style.fontFamily = "Roboto";
         this.modal.style.display = "block";
         $("#modal-h2").html("¡Oh qué triste! Perdiste... Pero ¡Ey! Acá van algunos reconocimientos:");
-        $("#modal-p2").html("El Highscore era: " + this.jugador.hs);
-        $("#modal-p1").html("Y esta vez hiciste " + this.jugador.acumuladorPuntos + " puntos.");
-        $("#modal-p3").html("Ah... y jugaste durante " + 200 + " segundos.");
-
+        $("#modal-p2").html("El Highscore era: " + this.jugador.hs).css('text-align', 'center');
+        $("#modal-p1").html("Y esta vez hiciste " + this.jugador.acumuladorPuntos + " puntos.").css('text-align', 'center');
+        $('#modal-p3').css('display', 'none');
     },
 
     generarPalabra: function(numPalabra,upper,jugador){
@@ -76,8 +61,9 @@ Controlador.prototype = {
         vista.elementos.puntos.html(this.jugador.acumuladorPuntos);
         vista.elementos.vidas.html(this.jugador.cantidadVidas);
         vista.cambiarColor();
-        
+
     },
+
     startTimer: function (resetInterval = false) {
         var timer = this.dificultad;
         var contexto = this;
@@ -91,7 +77,7 @@ Controlador.prototype = {
         contexto.myTimer = setInterval(function () {
             // to start only after the modal it's closed
             if( controlador.modal.style.display == "none"){
-                vista.mostrarHS(contexto.jugador.hs);   
+                vista.mostrarHS();   
                 display.textContent = timer;
                 timer--;
                 // if there's still time, enters the if
@@ -104,11 +90,6 @@ Controlador.prototype = {
             }
         }, 1000);
     },
-
-
-
-
-
 
     getRandomInt: function (max) {
         return max[Math.floor(max.length * Math.random())];
@@ -131,8 +112,7 @@ Controlador.prototype = {
             vista.desaparecerPalabra(); 
         } else if(estado && palabra==user){
             jugador.acumularPuntos(this.palabra);
-            vista.mostrarPuntos(jugador.acumuladorPuntos); /* 
-            vista.mostrarHS(jugador.hs(jugador.puntos)); */
+            vista.mostrarPuntos(jugador.acumuladorPuntos); 
             this.startTimer(true);
             vista.desaparecerPalabra(); 
         } else if(estado && palabra !== user){
@@ -141,4 +121,8 @@ Controlador.prototype = {
             setTimeout(() => {vista.desaparecerPalabra()}, 50);
         }
     },
+
+    guardarPuntaje: function(num){
+        
+    }
 }
